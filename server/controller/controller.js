@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-var { Userdb, Member } = require('../model/model');
-=======
 var { Userdb, Member, Bookdb } = require('../model/model');
->>>>>>> books_feature
 
 // create and save new user
 exports.createUser = (req,res)=>{
@@ -50,11 +46,7 @@ exports.findUser = (req, res)=>{
                 }
             })
             .catch(err =>{
-<<<<<<< HEAD
-                res.status(500).send({ message: "Erro retrieving user with id " + id})
-=======
                 res.status(500).send({ message: "Error retrieving user with id " + id})
->>>>>>> books_feature
             })
 
     }else{
@@ -190,11 +182,6 @@ exports.findMember = (req, res)=>{
                 res.status(500).send({ message : err.message || "Error Occurred while retriving Member information" })
             })
     }
-<<<<<<< HEAD
-
-    
-=======
->>>>>>> books_feature
 }
 
 exports.updateMember = (req, res)=>{
@@ -216,8 +203,6 @@ exports.updateMember = (req, res)=>{
         .catch(err =>{
             res.status(500).send({ message : "Error Update Member information"})
         })
-<<<<<<< HEAD
-=======
 }
 
 // Create and save a book
@@ -320,5 +305,4 @@ exports.deleteBook = (req, res)=>{
                 message: "Could not delete Book with id=" + id
             });
         });
->>>>>>> books_feature
 }

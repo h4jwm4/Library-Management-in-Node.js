@@ -50,9 +50,6 @@ exports.update_member = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
-<<<<<<< HEAD
-}
-=======
 }
 
 exports.add_book = (req, res) =>{
@@ -79,4 +76,3 @@ exports.update_book = (req, res) =>{
         })
 }
 
->>>>>>> books_feature

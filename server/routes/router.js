@@ -29,13 +29,8 @@ route.get('/update-user', services.update_user)
 route.get('/add-member', services.add_member);
 
 /**
-<<<<<<< HEAD
- *  @description add members
- *  @method GET /add-member
-=======
  *  @description show members
  *  @method GET /show-member
->>>>>>> books_feature
  */
 route.get('/member', services.show_member);
 
@@ -45,8 +40,6 @@ route.get('/member', services.show_member);
  */
 route.get('/update-member', services.update_member)
 
-<<<<<<< HEAD
-=======
 
 /**
  *  @description add book
@@ -66,7 +59,6 @@ route.get('/book', services.show_book);
  */
 route.get('/update-book', services.update_book)
 
->>>>>>> books_feature
 // API for users
 route.post('/api/users', controller.createUser);
 route.get('/api/users', controller.findUser);
@@ -79,13 +71,10 @@ route.get('/api/member', controller.findMember);
 route.put('/api/member/:id', controller.updateMember);
 route.delete('/api/member/:id', controller.deleteMember);
 
-<<<<<<< HEAD
-=======
 // API Book
 route.post('/api/book', controller.createBook);
 route.get('/api/book', controller.findBook);
 route.put('/api/book/:id', controller.updateBook);
 route.delete('/api/book/:id', controller.deleteBook);
 
->>>>>>> books_feature
 module.exports = route;

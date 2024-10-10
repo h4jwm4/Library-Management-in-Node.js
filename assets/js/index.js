@@ -6,13 +6,10 @@ $("#add_member").submit(function(event){
     alert("Data Inserted Successfully!");
 })
 
-<<<<<<< HEAD
-=======
 $("#add_book").submit(function(event){
     alert("Data Inserted Successfully!");
 })
 
->>>>>>> books_feature
 $("#update_user").submit(function(event){
     event.preventDefault();
 
@@ -98,9 +95,6 @@ $("#update_member").submit(function(event){
         alert("Data Updated Successfully!");
     })
 
-<<<<<<< HEAD
-})
-=======
 })
 
 //Update Book
@@ -146,4 +140,3 @@ if(window.location.pathname == "/book"){
 
     })
 }
->>>>>>> books_feature
