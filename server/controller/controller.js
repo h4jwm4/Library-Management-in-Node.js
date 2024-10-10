@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var { Userdb, Member } = require('../model/model');
+=======
+var { Userdb, Member, Bookdb } = require('../model/model');
+>>>>>>> books_feature
 
 // create and save new user
 exports.createUser = (req,res)=>{
@@ -46,7 +50,11 @@ exports.findUser = (req, res)=>{
                 }
             })
             .catch(err =>{
+<<<<<<< HEAD
                 res.status(500).send({ message: "Erro retrieving user with id " + id})
+=======
+                res.status(500).send({ message: "Error retrieving user with id " + id})
+>>>>>>> books_feature
             })
 
     }else{
@@ -182,8 +190,11 @@ exports.findMember = (req, res)=>{
                 res.status(500).send({ message : err.message || "Error Occurred while retriving Member information" })
             })
     }
+<<<<<<< HEAD
 
     
+=======
+>>>>>>> books_feature
 }
 
 exports.updateMember = (req, res)=>{
@@ -205,4 +216,109 @@ exports.updateMember = (req, res)=>{
         .catch(err =>{
             res.status(500).send({ message : "Error Update Member information"})
         })
+<<<<<<< HEAD
+=======
+}
+
+// Create and save a book
+exports.createBook = (req, res) => {
+    // validate request
+    if(!req.body){
+        res.status(400).send({ message : "Content can not be emtpy!"});
+        return;
+    }
+
+    // new book
+    const book = new Bookdb({
+        title : req.body.title,
+        author : req.body.author,
+        category : req.body.category,
+        availableCopies: req.body.availableCopies,
+        totalCopies: req.body.totalCopies
+    })
+
+    // save book in the database
+    book
+        .save(book)
+        .then(data => {
+            //res.send(data)
+            res.redirect('/add-book');
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message : err.message || "Some error occurred while creating a create operation"
+            });
+        });
+}
+
+exports.findBook = (req, res)=>{
+
+    if(req.query.id){
+        const id = req.query.id;
+
+        Bookdb.findById(id)
+            .then(data =>{
+                if(!data){
+                    res.status(404).send({ message : "Not found Book with id "+ id})
+                }else{
+                    res.send(data)
+                }
+            })
+            .catch(err =>{
+                res.status(500).send({ message: "Error retrieving book with id " + id})
+            })
+
+    }else{
+        Bookdb.find()
+            .then(book => {
+                res.send(book)
+            })
+            .catch(err => {
+                res.status(500).send({ message : err.message || "Error Occurred while retriving Book information" })
+            })
+    }
+}
+
+// Update a book 
+exports.updateBook = (req, res)=>{
+    if(!req.body){
+        return res
+            .status(400)
+            .send({ message : "Data to update can not be empty"})
+    }
+
+    const id = req.params.id;
+    Bookdb.findByIdAndUpdate(id, req.body, { useFindAndModify: false})
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message : `Cannot Update book with ${id}. Book not found!`})
+            }else{
+                res.send(data)
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({ message : "Error Update book information"})
+        })
+}
+
+// Delete a book 
+exports.deleteBook = (req, res)=>{
+    const id = req.params.id;
+
+    Bookdb.findByIdAndDelete(id)
+        .then(data => {
+            if(!data){
+                res.status(404).send({ message : `Cannot Delete book with id ${id}. Maybe book id is wrong`})
+            }else{
+                res.send({
+                    message : "Book was deleted successfully!"
+                })
+            }
+        })
+        .catch(err =>{
+            res.status(500).send({
+                message: "Could not delete Book with id=" + id
+            });
+        });
+>>>>>>> books_feature
 }

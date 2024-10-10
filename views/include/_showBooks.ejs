@@ -1,0 +1,18 @@
+<% for(var i = 0; i < book.length; i++) { %>
+    <tr>
+        <td><%= i + 1 %></td>
+        <td><%= book[i].title %></td>
+        <td><%= book[i].author %></td>
+        <td><%= book[i].category %></td>
+        <td><%= book[i].availableCopies %></td>
+        <td><%= book[i].totalCopies %></td>
+        <td>
+            <a href="/update-book?id=<%= book[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= book[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

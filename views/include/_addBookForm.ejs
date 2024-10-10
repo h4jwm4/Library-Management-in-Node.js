@@ -1,0 +1,31 @@
+ <!-- form handling -->
+ <form action="/api/book" method="POST" id="add_book">
+    <div class="new_book">
+        <div class="form-group">
+            <label for="title" class="text-light">Book Title</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="title" value="" placeholder="The Jungle Book">
+        </div>
+        <div class="form-group">
+            <label for="author" class="text-light">Author Name</label>
+            <input type="text" name="author" value="" placeholder="Jane Austen ">
+        </div>
+        <div class="form-group">
+            <label for="category" class="text-light">category</label>
+            <input type="text" name="category" value="" placeholder=" ">
+        </div>
+        <div class="form-group">
+            <label for="availableCopies" class="text-light">Available Copies</label>
+            <input type="number" name="availableCopies" value="" placeholder=" ">
+        </div>
+        <div class="form-group">
+            <label for="totalCopies" class="text-light">Total Copies</label>
+            <input type="number" name="totalCopies" value="" placeholder=" ">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>

@@ -146,22 +146,41 @@ table{
     padding: .5em 0;
 }
 
+<<<<<<< HEAD
 .new_user, .new_member, .new_member{
+=======
+.new_user, .new_member, .new_member, .new_book{
+>>>>>>> books_feature
     max-width: 786px;
     margin: auto;
 }
 
 #update_user .form-group,
 #add_user .form-group,
+<<<<<<< HEAD
 #add_member .form-group,
 #update_member .form-group {
     margin: .4em 0;
+=======
+#add_book .form-group,
+#add_member .form-group,
+#update_member .form-group,
+#update_book .form-group {
+margin: .4em 0;
+>>>>>>> books_feature
 }
 
 #update_user .form-group input[type="text"],
 #add_user .form-group input[type="text"],
+<<<<<<< HEAD
 #add_member .form-group input[type="text"],
 #update_member .form-group input[type="text"] {
+=======
+#add_book .form-group input[type="text"],
+#add_member .form-group input[type="text"],
+#update_member .form-group input[type="text"],
+#update_book .form-group input[type="text"] {
+>>>>>>> books_feature
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -218,8 +237,15 @@ table{
 
 #update_user .form-group .btn,
 #add_user .form-group .btn,
+<<<<<<< HEAD
 #add_member .form-group .btn,
 #update_member .form-group .btn {
+=======
+#add_book .form-group .btn,
+#add_member .form-group .btn,
+#update_member .form-group .btn,
+#update_book .form-group .btn {
+>>>>>>> books_feature
     width: 100%;
     padding: .9em 1em;
     background-color:#16db93; 
@@ -234,7 +260,24 @@ table{
 #update_user .form-group .btn:hover,
 #add_user .form-group .btn:hover,
 #add_member .form-group .btn:hover,
+<<<<<<< HEAD
 #update_member .form-group .btn:hover {
     background-color: var(--dark);
     color: var(--border);
 }
+=======
+#update_member .form-group .btn:hover,
+#add_book .form-group .btn:hover,
+#update_book .form-group .btn:hover {
+    background-color: var(--dark);
+    color: var(--border);
+}
+
+.section {
+    display: flex;
+}
+
+.section__item {
+    margin: 1px 5px;
+}
+>>>>>>> books_feature

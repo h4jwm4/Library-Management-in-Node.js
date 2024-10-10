@@ -50,4 +50,33 @@ exports.update_member = (req, res) =>{
         .catch(err =>{
             res.send(err);
         })
+<<<<<<< HEAD
 }
+=======
+}
+
+exports.add_book = (req, res) =>{
+    res.render('add_book');
+}
+
+exports.show_book = (req, res) => {
+    axios.get('http://localhost:3000/api/book')
+    .then(function(response){
+        res.render('books', { book : response.data });
+    })
+    .catch(err =>{
+        res.send(err);
+    })
+}
+
+exports.update_book = (req, res) =>{
+    axios.get('http://localhost:3000/api/book', { params : { id : req.query.id }})
+        .then(function(bookData){
+            res.render("update_book", { book : bookData.data})
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+}
+
+>>>>>>> books_feature

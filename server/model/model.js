@@ -50,7 +50,37 @@ const memberSchema = new mongoose.Schema({
     },
 })
 
+<<<<<<< HEAD
 const Userdb = mongoose.model('userdb', schema);
 const Member = mongoose.model('Member', memberSchema);
 
 module.exports = { Userdb, Member};
+=======
+var bookSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  category: {
+    type: String
+  },
+  availableCopies: {
+    type: Number,
+    default: 0
+  },
+  totalCopies: {
+    type: Number,
+    default: 0
+  },
+})
+
+const Userdb = mongoose.model('userdb', schema);
+const Member = mongoose.model('Member', memberSchema);
+const Bookdb = mongoose.model('book',bookSchema);
+
+module.exports = { Userdb, Member, Bookdb };
+>>>>>>> books_feature

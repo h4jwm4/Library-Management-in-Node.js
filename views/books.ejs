@@ -1,6 +1,6 @@
 
 <!-- include header -->
-    <%- include('include/_header') %>
+<%- include('include/_header') %>
 <!-- /include header -->
 
 
@@ -14,12 +14,9 @@
                 <a href="/add-member" class="border-shadow">
                     <span class="text-gradient">New Member <i class="fas fa-user"></i></span>
                 </a>
-<<<<<<< HEAD
-=======
                 <a href="/add-book" class="border-shadow">
-                    <span class="text-gradient">New Book<i class="fas fa-user"></i></span>
+                    <span class="text-gradient">New Book <i class="fas fa-user"></i></span>
                 </a>
->>>>>>> books_feature
             </div>
 
             <!-- form handling -->
@@ -28,15 +25,16 @@
                     <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>@Email</th>
-                            <th>Gender</th>
-                            <th>Status</th>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Category</th>
+                            <th>Available Copies</th>
+                            <th>Total Copies</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <%- include('include/_show') %>
+                        <%- include('include/_showBooks') %>
                     </tbody>
                 </table>
             </form>
