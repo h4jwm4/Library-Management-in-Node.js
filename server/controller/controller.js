@@ -62,7 +62,7 @@ exports.findUser = (req, res)=>{
     
 }
 
-// Update a new idetified user by user id
+// Update a new identified user by user id
 exports.updateUser = (req, res)=>{
     if(!req.body){
         return res
@@ -156,6 +156,7 @@ exports.deleteMember = (req, res)=>{
         });
 }
 
+// Find Member
 exports.findMember = (req, res)=>{
 
     if(req.query.id){
@@ -184,6 +185,7 @@ exports.findMember = (req, res)=>{
     }
 }
 
+// Update a Member
 exports.updateMember = (req, res)=>{
     if(!req.body){
         return res
@@ -236,6 +238,7 @@ exports.createBook = (req, res) => {
         });
 }
 
+// Find book
 exports.findBook = (req, res)=>{
 
     if(req.query.id){
