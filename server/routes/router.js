@@ -3,6 +3,7 @@ const route = express.Router()
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+const { issueBook } = require('../controller/issueBook')
 
 /**
  *  @description Root Route
@@ -76,5 +77,8 @@ route.post('/api/book', controller.createBook);
 route.get('/api/book', controller.findBook);
 route.put('/api/book/:id', controller.updateBook);
 route.delete('/api/book/:id', controller.deleteBook);
+
+// API Issue Books
+route.post('/api/issueBook/:bookId/:memberId', issueBook);
 
 module.exports = route;
