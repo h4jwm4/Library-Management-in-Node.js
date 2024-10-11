@@ -50,9 +50,14 @@ const memberSchema = new mongoose.Schema({
     },
     borrowedBooks: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'book'
-      }
+        bookId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'book'
+        },
+        serialId: {
+            type: Number
+        }
+      },
     ]
 })
 
@@ -78,8 +83,17 @@ var bookSchema = new mongoose.Schema({
   },
   issuedTo: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Member'
+      memberId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Member'
+      },
+      dueDate: {
+        type: Date
+      },
+      serialId: {
+        type: Number,
+        unique: true
+      }
     }
   ]
 })

@@ -14,13 +14,23 @@ exports.issueBook = async (req, res) => {
       return res.status(400).json({ error: 'Book is not available' });
     }
 
-    // Update book and member
-    book.availableCopies -= 1;
-    book.issuedTo.push(memberId);
-    //book.dueDate = calculateDueDate(); // Implement your calculation logic
+    const issuedToData = {
+      memberId: memberId,
+      dueDate: calculateDueDate(),
+      serialId: await getSerialId(memberId)
+    };
 
+    const borrowedBooksData = {
+      bookId: bookId,
+      serialId: await getSerialId(memberId)
+    };
+
+    // Update book and member
+    await book.issuedTo.push(issuedToData);
+    book.availableCopies -= 1;
     await book.save();
-    member.borrowedBooks.push(bookId);
+
+    await member.borrowedBooks.push(borrowedBooksData);
     await member.save();
 
     res.json({ message: 'Book issued successfully' });
@@ -32,6 +42,16 @@ exports.issueBook = async (req, res) => {
 
 // Function to calculate due date based on library policies
 function calculateDueDate() {
-  // ... your logic here ...
-  return new Date(); // Replace with your calculated date
+  const currentDate = new Date();
+  currentDate.setMonth(currentDate.getMonth() + 3);
+  return currentDate;
+}
+
+// Generate serial id
+async function getSerialId(memberId) {
+  const member = await Member.findById(memberId);
+  const borrowedBooks = member.borrowedBooks;
+  // Increment the serialId
+  const newSerialId = borrowedBooks.length + 1;
+  return newSerialId;
 }
