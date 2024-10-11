@@ -1,9 +1,10 @@
 const express = require('express');
-const route = express.Router()
+const route = express.Router();
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
-const { issueBook } = require('../controller/issueBook')
+const { issueBook } = require('../controller/issueBook');
+const { returnBook } = require('../controller/returnBook');
 
 /**
  *  @description Root Route
@@ -80,5 +81,8 @@ route.delete('/api/book/:id', controller.deleteBook);
 
 // API Issue Books
 route.post('/api/issueBook/:bookId/:memberId', issueBook);
+
+// API Return Books
+route.post('/api/returnBook/:bookId/:memberId', returnBook);
 
 module.exports = route;
