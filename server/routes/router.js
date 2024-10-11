@@ -83,6 +83,6 @@ route.delete('/api/book/:id', controller.deleteBook);
 route.post('/api/issueBook/:bookId/:memberId', issueBook);
 
 // API Return Books
-route.post('/api/returnBook/:bookId/:memberId', returnBook);
+route.get('/api/returnBook', returnBook);
 
 module.exports = route;
