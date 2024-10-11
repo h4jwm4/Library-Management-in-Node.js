@@ -5,6 +5,7 @@ const services = require('../services/render');
 const controller = require('../controller/controller');
 const { issueBook } = require('../controller/issueBook');
 const { returnBook } = require('../controller/returnBook');
+const { findDueBooks } = require('../controller/dueBook')
 
 /**
  *  @description Root Route
@@ -84,5 +85,8 @@ route.post('/api/issueBook/:bookId/:memberId', issueBook);
 
 // API Return Books
 route.get('/api/returnBook', returnBook);
+
+// API Due Books
+route.get('/api/findDueBooks', findDueBooks);
 
 module.exports = route;
