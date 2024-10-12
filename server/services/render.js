@@ -1,18 +1,37 @@
 const axios = require('axios');
 
 
-exports.homeRoutes = (req, res) => {
-    // Make a get request to /api/users
-    axios.get('http://localhost:3000/api/users')
-        .then(function(response){
-            res.render('index', { users : response.data });
-        })
-        .catch(err =>{
-            res.send(err);
-        })
+// exports.homeRoutes = (req, res) => {
+//     // Make a get request to /api/users
+//     axios.get('http://localhost:3000/api/users')
+//         .then(function(response){
+//             res.render('index', { users : response.data });
+//         })
+//         .catch(err =>{
+//             res.send(err);
+//         })
+// }
 
-    
-}
+exports.homeRoutes = async (req, res) => {
+  try {
+    const [usersResponse, membersResponse, booksResponse] = await Promise.all([
+      axios.get('http://localhost:3000/api/users'),
+      axios.get('http://localhost:3000/api/member'),
+      axios.get('http://localhost:3000/api/book'),
+    ]);
+
+    // Handle successful responses and extract data
+    const users = usersResponse.data;
+    const members = membersResponse.data;
+    const book = booksResponse.data;
+
+    // Render the index template with all fetched data
+    res.render('index', { users, members, book });
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    res.status(500).send('An error occurred while fetching data.');
+  }
+};
 
 exports.add_user = (req, res) =>{
     res.render('add_user');
