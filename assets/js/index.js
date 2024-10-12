@@ -105,7 +105,7 @@ $("#update_book").submit(function(event){
     var data = {}
 
     $.map(unindexed_array, function(n, i){
-        data[n['book']] = n['value']
+        data[n['name']] = n['value']
     })
 
 

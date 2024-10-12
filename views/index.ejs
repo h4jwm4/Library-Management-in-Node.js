@@ -21,6 +21,7 @@
 
             <!-- form handling -->
             <form action="/" method="POST">
+                <div>Users List</div>
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
@@ -36,6 +37,45 @@
                         <%- include('include/_show') %>
                     </tbody>
                 </table>
+
+                <div>
+                    <h2>Members List</h2>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>@Email</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%- include('include/_showMembers', { members: members }) %>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div>
+                    <h2>Book List</h2>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Available Copies</th>
+                                <th>Total Copies</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%- include('include/_showBooks', { books: books }) %>
+                        </tbody>
+                    </table>
+                </div>
             </form>
         </div>
     </main>
