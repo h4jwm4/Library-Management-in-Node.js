@@ -16,17 +16,17 @@ exports.homeRoutes = async (req, res) => {
   try {
     const [usersResponse, membersResponse, booksResponse] = await Promise.all([
       axios.get('http://localhost:3000/api/users'),
-      axios.get('http://localhost:3000/api/members'),
-      axios.get('http://localhost:3000/api/books'),
+      axios.get('http://localhost:3000/api/member'),
+      axios.get('http://localhost:3000/api/book'),
     ]);
 
     // Handle successful responses and extract data
     const users = usersResponse.data;
     const members = membersResponse.data;
-    const books = booksResponse.data;
+    const book = booksResponse.data;
 
     // Render the index template with all fetched data
-    res.render('index', { users, members, books });
+    res.render('index', { users, members, book });
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).send('An error occurred while fetching data.');
