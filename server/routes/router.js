@@ -1,8 +1,11 @@
 const express = require('express');
-const route = express.Router()
+const route = express.Router();
 
 const services = require('../services/render');
 const controller = require('../controller/controller');
+const { issueBook } = require('../controller/issueBook');
+const { returnBook } = require('../controller/returnBook');
+const { findDueBooks } = require('../controller/dueBook')
 
 /**
  *  @description Root Route
@@ -76,5 +79,14 @@ route.post('/api/book', controller.createBook);
 route.get('/api/book', controller.findBook);
 route.put('/api/book/:id', controller.updateBook);
 route.delete('/api/book/:id', controller.deleteBook);
+
+// API Issue Books
+route.post('/api/issueBook/:bookId/:memberId', issueBook);
+
+// API Return Books
+route.get('/api/returnBook', returnBook);
+
+// API Due Books
+route.get('/api/findDueBooks', findDueBooks);
 
 module.exports = route;

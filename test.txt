@@ -1,0 +1,4 @@
+GET http://localhost:3000/api/returnBook
+    ?bookId=6708ea55e440ed2ac8eb1d86
+    &memberId=6708e98633dbbe1774ea10d2
+    &serialId=5

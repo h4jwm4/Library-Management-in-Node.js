@@ -48,6 +48,17 @@ const memberSchema = new mongoose.Schema({
           message: 'Invalid email format'
         }
     },
+    borrowedBooks: [
+      {
+        bookId: {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'book'
+        },
+        serialId: {
+            type: Number
+        }
+      },
+    ]
 })
 
 var bookSchema = new mongoose.Schema({
@@ -70,6 +81,21 @@ var bookSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
+  issuedTo: [
+    {
+      memberId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Member'
+      },
+      dueDate: {
+        type: Date
+      },
+      serialId: {
+        type: Number,
+        unique: true
+      }
+    }
+  ]
 })
 
 const Userdb = mongoose.model('userdb', schema);
