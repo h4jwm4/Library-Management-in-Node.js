@@ -1,0 +1,428 @@
+
+<!-- include header -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Application</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+    <div class="app-container">
+         <!-- Header -->
+         <header id="header">
+            <nav>
+                <div class="container">
+                    <div class="text-center">
+                        <a href="/" class="nav-brand text-dark">User Management System</a>
+                    </div>
+                </div>
+                <div class="section">
+                    <div class="section__item">
+                        <a href="/member">Members</a>
+                    </div>
+                    <div class="section__item">
+                        <a href="/book">Books</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+<!-- /include header -->
+
+
+    <!-- Main Site -->
+    <main id="site-main">
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <a href="/add-user" class="border-shadow">
+                    <span class="text-gradient">New User <i class="fas fa-user"></i></span>
+                </a>
+                <a href="/add-member" class="border-shadow">
+                    <span class="text-gradient">New Member <i class="fas fa-user"></i></span>
+                </a>
+                <a href="/add-book" class="border-shadow">
+                    <span class="text-gradient">New Book<i class="fas fa-user"></i></span>
+                </a>
+            </div>
+
+            <!-- form handling -->
+            <form action="/" method="POST">
+                <div>Users List</div>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>@Email</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>1</td>
+                            <td>Apple Jobs</td>
+                            <td>appjobs@gmail.com</td>
+                            <td>Male</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="/update-user?id=670184f14093464f5812661d" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="670184f14093464f5812661d">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2</td>
+                            <td>Mikael Sthare</td>
+                            <td>mksthare@vk.com</td>
+                            <td>Male</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="/update-user?id=6701863c4093464f5812661e" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6701863c4093464f5812661e">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>3</td>
+                            <td>AA</td>
+                            <td>dds</td>
+                            <td>Male</td>
+                            <td>Inactive</td>
+                            <td>
+                                <a href="/update-user?id=670187584093464f58126620" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="670187584093464f58126620">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>4</td>
+                            <td>Mango</td>
+                            <td>Mango@dd.com</td>
+                            <td>Female</td>
+                            <td>Inactive</td>
+                            <td>
+                                <a href="/update-user?id=6702ad1c54c7da0b103f93a8" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6702ad1c54c7da0b103f93a8">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>5</td>
+                            <td>Taehang</td>
+                            <td>tt@gmail.com</td>
+                            <td>Male</td>
+                            <td>Inactive</td>
+                            <td>
+                                <a href="/update-user?id=6702aecce921d935686439fb" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6702aecce921d935686439fb">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>6</td>
+                            <td>ff</td>
+                            <td>dd@gg.com</td>
+                            <td>Female</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="/update-user?id=6702b74062878d32ac3a37a9" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6702b74062878d32ac3a37a9">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>7</td>
+                            <td>john</td>
+                            <td>john@gmail.com</td>
+                            <td>Male</td>
+                            <td>Inactive</td>
+                            <td>
+                                <a href="/update-user?id=6704c229ea021ff111a0d79b" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6704c229ea021ff111a0d79b">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>8</td>
+                            <td>dfd</td>
+                            <td>sss#@ss</td>
+                            <td>Male</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="/update-user?id=6704d1a927bb09f281069d6b" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6704d1a927bb09f281069d6b">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>9</td>
+                            <td>ddddd</td>
+                            <td>bbb@gmail.com</td>
+                            <td>Male</td>
+                            <td>Inactive</td>
+                            <td>
+                                <a href="/update-user?id=6704d1fb1a98a83a60e78e4c" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6704d1fb1a98a83a60e78e4c">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>10</td>
+                            <td>Dog</td>
+                            <td>dog@gmail.com</td>
+                            <td>Male</td>
+                            <td>Active</td>
+                            <td>
+                                <a href="/update-user?id=6707ccef3bebf73f6816ec67" class="btn border-shadow update">
+                                    <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                </a>
+                                <a class="btn border-shadow delete" data-id="6707ccef3bebf73f6816ec67">
+                                    <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                </a>
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
+
+                <div>
+                    <h2>Members List</h2>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>@Email</th>
+                                <th>Gender</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>1</td>
+                                <td>Diego Mourichio DD</td>
+                                <td>Mountain View, North Calorina</td>
+                                <td>919678562453</td>
+                                <td>diego.mourichio@gmail.com</td>
+                                <td>
+                                    <a href="/update-member?id=6702b6cf62878d32ac3a37a8" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" data-id="6702b6cf62878d32ac3a37a8">
+                                        <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>2</td>
+                                <td>ddd</td>
+                                <td>dadsa</td>
+                                <td>911010101012</td>
+                                <td>deded@fff.com</td>
+                                <td>
+                                    <a href="/update-member?id=67040cd0ebf582234c662526" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" data-id="67040cd0ebf582234c662526">
+                                        <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>3</td>
+                                <td>Staikos Vergetis</td>
+                                <td>Greece</td>
+                                <td>646666666666</td>
+                                <td>stvergetis@gmail.com</td>
+                                <td>
+                                    <a href="/update-member?id=670414175d9afb1f5c334d75" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" data-id="670414175d9afb1f5c334d75">
+                                        <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>4</td>
+                                <td>Test User</td>
+                                <td>tst</td>
+                                <td>911010123121</td>
+                                <td>testuser@gmail.com</td>
+                                <td>
+                                    <a href="/update-member?id=6708e98633dbbe1774ea10d2" class="btn border-shadow update">
+                                        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                    </a>
+                                    <a class="btn border-shadow delete" data-id="6708e98633dbbe1774ea10d2">
+                                        <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div>
+                    <h2>Book List</h2>
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Category</th>
+                                <th>Available Copies</th>
+                                <th>Total Copies</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tbody>
+                            
+                                <tr>
+                                    <td>1</td>
+                                    <td>life of pie</td>
+                                    <td>irfan yadav</td>
+                                    <td>spirituality</td>
+                                    <td>4</td>
+                                    <td>103</td>
+                                    <td>
+                                        <a href="/update-book?id=6704dc2092ee58f3999baf72" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn border-shadow delete" data-id="6704dc2092ee58f3999baf72">
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>2</td>
+                                    <td>The Grass is always Greener</td>
+                                    <td>Jaffery Archer</td>
+                                    <td>Modern Times</td>
+                                    <td>4</td>
+                                    <td>20</td>
+                                    <td>
+                                        <a href="/update-book?id=6705fbca18ea40fd190e689a" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn border-shadow delete" data-id="6705fbca18ea40fd190e689a">
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>3</td>
+                                    <td>The Higher </td>
+                                    <td>A.E Copper</td>
+                                    <td>Romance</td>
+                                    <td>17</td>
+                                    <td>23</td>
+                                    <td>
+                                        <a href="/update-book?id=6705fc0018ea40fd190e689b" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn border-shadow delete" data-id="6705fc0018ea40fd190e689b">
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>4</td>
+                                    <td>The Open Boat</td>
+                                    <td>Stephen Crane</td>
+                                    <td>Classic</td>
+                                    <td>20</td>
+                                    <td>56</td>
+                                    <td>
+                                        <a href="/update-book?id=6705fc2f18ea40fd190e689c" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn border-shadow delete" data-id="6705fc2f18ea40fd190e689c">
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>5</td>
+                                    <td>Test Book</td>
+                                    <td>Test Author</td>
+                                    <td>TEST</td>
+                                    <td>1</td>
+                                    <td>5</td>
+                                    <td>
+                                        <a href="/update-book?id=6708ea55e440ed2ac8eb1d86" class="btn border-shadow update">
+                                            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                                        </a>
+                                        <a class="btn border-shadow delete" data-id="6708ea55e440ed2ac8eb1d86">
+                                            <span class="text-gradient"><i class="fas fa-times"></i></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+    </main>
+<!-- /Main Site -->
+
+
+<!-- include footer -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="/js/index.js"></script>
+    </div>
+</body>
+</html>
+<!-- /include footer -->
