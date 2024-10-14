@@ -128,6 +128,10 @@ body {
     background-color: var(--body-bg);
     border-radius: 36px 0px 0px 0px;
 }
+.app-content-body > div {
+    margin-bottom: 18px;
+    overflow: auto;
+}
 
 .app-content-welcome-message {
     display: flex;
@@ -198,5 +202,44 @@ body {
     height: 30px;
     border-radius: 100%;
     font-size: 13px;
+    text-align: center  ;
+}
+
+.list-tables {
+    display: flex;
+}
+
+.list-tables > div {
+    background: var(--snippet-bg);
+}
+
+.member-section {
+    margin-right: 10px;
+}
+
+.book-section {
+    margin-left: 10px;
+}
+
+.member-section > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.member-section > div > h1{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.add-new-member-button {
+    background: white;
+    display: flex;
+}
+
+.add-new-member-text {
+    color: black;
     text-align: center;
+    height: 100%;
+    font-size: 12px;
+    font-weight: 500;
 }
