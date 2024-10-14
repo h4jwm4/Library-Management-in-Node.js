@@ -7,6 +7,9 @@
     --sidebar-link: #fff;
     --sidebar-hover-link: #4d4949;
     --sidebar-active-link: #f65867;
+    --icon: #fff;
+    --body-bg: #201c1d;
+    --snippet-bg: #4d4949;
 }
 
 * {
@@ -40,6 +43,7 @@ body {
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     max-width: 2000px;
     margin: 0 auto;
+    color: white;
 }
 
 .sidebar {
@@ -89,4 +93,110 @@ body {
 
 .sidebar-list-item.active {
     background-color: var(--sidebar-active-link);
+}
+
+.app-icon {
+    color: white;
+}
+
+.app-content{
+    width: 100%;
+}
+
+.app-content-header {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: start;
+    padding: 2px;
+}
+
+.app-content-headerMenu {
+    padding:0px 4px 0px 4px ;
+}
+.app-content-headerText {
+    align-self: center;
+    margin-top: -8px;
+    font-size: 20px;
+    padding-left: 4px;
+}
+
+.app-content-body {
+    width: 100%;
+    height: 100%;
+    padding: 25px 15px 0px 15px;
+    background-color: var(--body-bg);
+    border-radius: 36px 0px 0px 0px;
+}
+
+.app-content-welcome-message {
+    display: flex;
+}
+
+.app-content-welcome-message div {
+    padding: 4px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.app-content-welcome-message-adminText {
+    color:#f65867;
+}
+
+.app-content-date {
+    display: flex;
+}
+
+.app-content-date div {
+    padding: 2px;
+}
+
+.app-content-data-snippets {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-content-data-snippets .snippet {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--snippet-bg);
+    padding: 8px;
+    border-radius: 25px;
+    flex-grow: 1;
+    margin: 0 10px 0 10px;
+}
+
+.app-content-data-snippets .snippet .value {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0px 0 2px 0;
+}
+
+.app-content-data-snippets .snippet .name {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 2px 0 0px 0;
+}
+
+.app-content-data-snippets .snippet .wrapper {
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.app-content-data-snippets .snippet .icon {
+    margin-left: 15px;
+    padding-right: 20px;
+    margin-top: 10px;
+}
+
+.app-content-data-snippets .snippet .icon div {
+    background-color: #f65867;
+    padding: 4px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    font-size: 13px;
+    text-align: center;
 }
