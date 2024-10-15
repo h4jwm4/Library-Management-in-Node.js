@@ -224,19 +224,20 @@ body {
     width: 100%;
 }
 
-.member-section, .book-section {
+.member-section, .book-section, .overdue-section {
     margin-right: 10px;
     padding: 16px;
     border-radius: 24px;
 }
 
-.member-section > div, .book-section > div {
+.member-section > div, .book-section > div, .overdue-section >div {
     display: flex;
     justify-content: space-between;
 }
 
 .member-section > div > h1,
-.book-section > div > h1 {
+.book-section > div > h1,
+.overdue-section >div >h1 {
     font-size: 20px;
     font-weight: 500;
 }
@@ -313,4 +314,8 @@ button:focus {
     margin-left: auto;
     margin-right: 0;
     padding-right: 4px;
+}
+
+.overdue-section {
+    margin-top: 20px;
 }
