@@ -47,7 +47,6 @@ body {
 }
 
 .sidebar {
-    flex-basis: 200px;
     max-width: 200px;
     flex-shrink: 0;
     background-color: var(--sidebar);
@@ -109,16 +108,26 @@ body {
     color: white;
     align-items: start;
     padding: 2px;
+    height: 55px;
 }
 
 .app-content-headerMenu {
     padding:0px 4px 0px 4px ;
+    display: flex;
+    height: 100%;
 }
+
+.app-content-headerMenu > svg {
+    align-self: center;
+}
+
 .app-content-headerText {
     align-self: center;
-    margin-top: -8px;
+    margin-top: auto;
+    margin-bottom: auto;
     font-size: 20px;
     padding-left: 4px;
+    font-weight: 500;
 }
 
 .app-content-body {
@@ -207,39 +216,101 @@ body {
 
 .list-tables {
     display: flex;
+    justify-content: space-between;
 }
 
 .list-tables > div {
     background: var(--snippet-bg);
+    width: 100%;
 }
 
-.member-section {
+.member-section, .book-section {
     margin-right: 10px;
+    padding: 16px;
+    border-radius: 24px;
 }
 
-.book-section {
-    margin-left: 10px;
-}
-
-.member-section > div {
+.member-section > div, .book-section > div {
     display: flex;
     justify-content: space-between;
 }
 
-.member-section > div > h1{
+.member-section > div > h1,
+.book-section > div > h1 {
     font-size: 20px;
     font-weight: 500;
 }
 
-.add-new-member-button {
+.add-new-member-button,
+.add-new-book-button {
     background: white;
-    display: flex;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 8px;
+    color: #2f2a2b;
+    border-radius: 10px;
 }
 
-.add-new-member-text {
-    color: black;
-    text-align: center;
-    height: 100%;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+tbody > tr > th {
     font-size: 12px;
     font-weight: 500;
+    color: #979696;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-right: 4px;
+}
+
+tbody > tr {
+    border-bottom: 1px solid #7e7c7c;
+}
+
+tbody > tr > td {
+    font-size: 12px;
+    font-weight: 500;
+    color: #dbdada;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-right: 4px;
+}
+
+tbody > tr > th:nth-child(5) {
+    text-align: center;
+}
+
+tbody > tr > td:nth-child(5) {
+    text-align: center;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+  
+button:focus {
+    outline: revert;
+}
+
+.see-all {
+    font-size: 11px;
+    font-weight: 500;
+    color: #f65867;
+    padding-top: 8px;
+}
+
+.see-all > button {
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: 4px;
 }
