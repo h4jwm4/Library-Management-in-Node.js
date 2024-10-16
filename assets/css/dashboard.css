@@ -133,7 +133,7 @@ body {
 .app-content-body {
     width: 100%;
     height: 100%;
-    padding: 25px 15px 80px 15px;
+    padding: 25px 20px 80px 20px;
     background-color: var(--body-bg);
     border-radius: 36px 0px 0px 0px;
     overflow: auto;
@@ -178,6 +178,15 @@ body {
     border-radius: 25px;
     flex-grow: 1;
     margin: 0 10px 0 10px;
+    width: 25%;
+}
+
+.app-content-data-snippets .snippet.borrowed-books {
+    margin-left: 0px;
+}
+
+.app-content-data-snippets .snippet.total-members {
+    margin-right: 0px;
 }
 
 .app-content-data-snippets .snippet .value {
@@ -225,11 +234,17 @@ body {
     width: 100%;
 }
 
-.member-section, .book-section, .overdue-section {
-    margin-right: 10px;
+.member-section {
+    margin-right: 20px;
     padding: 16px;
     border-radius: 24px;
 }
+
+.book-section, .overdue-section {
+    padding: 16px;
+    border-radius: 24px;
+}
+
 
 .member-section > div, .book-section > div, .overdue-section >div {
     display: flex;
@@ -318,5 +333,5 @@ button:focus {
 }
 
 .overdue-section {
-    margin-top: 20px;
+    margin-top: 5px;
 }
