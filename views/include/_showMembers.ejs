@@ -4,7 +4,7 @@
         <td><%= members[i].name %></td>
         <td><%= members[i].address %></td>
         <td><%= members[i].phoneNumber %></td>
-        <td><%= members[i].email %></td>
+        <td><%= members[i].borrowedBooks.length %></td>
         <td>
             <a href="/update-member?id=<%= members[i]._id%>" class="btn border-shadow update">
                 <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>

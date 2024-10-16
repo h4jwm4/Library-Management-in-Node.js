@@ -14,6 +14,12 @@ const { findDueBooks } = require('../controller/dueBook')
 route.get('/', services.homeRoutes);
 
 /**
+ *  @description Root Route
+ *  @method GET /
+ */
+route.get('/dashboard', services.dashboardRoutes);
+
+/**
  *  @description add users
  *  @method GET /add-user
  */

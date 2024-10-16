@@ -173,8 +173,17 @@ exports.findMember = (req, res)=>{
             .catch(err =>{
                 res.status(500).send({ message: "Error retrieving user with id " + id})
             })
-
-    }else{
+    }
+    else if (req.query.limit) {
+        const limit = Number(req.query.limit);
+        Member.find().limit(limit)
+        .then(member => {
+            res.send(member)
+        })
+        .catch(err => {
+            res.status(500).send({ message : err.message || "Error Occurred while retriving Member information" })
+        })
+    } else {
         Member.find()
             .then(member => {
                 res.send(member)
@@ -254,9 +263,19 @@ exports.findBook = (req, res)=>{
             })
             .catch(err =>{
                 res.status(500).send({ message: "Error retrieving book with id " + id})
+        })
+    }
+    else if (req.query.limit) {
+        const limit = Number(req.query.limit);
+        Bookdb.find().limit(limit)
+            .then(book => {
+                res.send(book)
             })
-
-    }else{
+            .catch(err => {
+                res.status(500).send({ message : err.message || "Error Occurred while retriving Book information" })
+            })
+    }
+    else{
         Bookdb.find()
             .then(book => {
                 res.send(book)

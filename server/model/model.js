@@ -23,18 +23,6 @@ const memberSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    phoneNumber: {
-        type: String,
-        unique: true,
-        validate: {
-          validator: (value) => {
-            // Validate phone number format
-            const phoneRegex = /^\d{12}$/;
-            return phoneRegex.test(value);
-          },
-          message: 'Invalid phone number format'
-        }
-    },
     email: {
         type: String,
         unique: true,
@@ -61,7 +49,7 @@ const memberSchema = new mongoose.Schema({
     ]
 })
 
-var bookSchema = new mongoose.Schema({
+const bookSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -87,6 +75,16 @@ var bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member'
       },
+      memberName: 
+      {
+        type: String
+      },
+      bookId: {
+        type: String
+      },
+      bookTitle: {
+        type: String
+      },
       dueDate: {
         type: Date
       },
@@ -100,6 +98,6 @@ var bookSchema = new mongoose.Schema({
 
 const Userdb = mongoose.model('userdb', schema);
 const Member = mongoose.model('Member', memberSchema);
-const Bookdb = mongoose.model('book',bookSchema);
+const Bookdb = mongoose.model('book', bookSchema);
 
 module.exports = { Userdb, Member, Bookdb };
