@@ -234,34 +234,15 @@
                                     <th>Due Date</th>
                                     <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>#8-10020-29</td>
-                                    <td>The Great Gatsby</td>
-                                    <td>10025</td>
-                                    <td>2023-10-01</td>
-                                    <td><button>...</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#8-10021-30</td>
-                                    <td>1984</td>
-                                    <td>10026</td>
-                                    <td>2023-10-05</td>
-                                    <td><button>...</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#8-10022-31</td>
-                                    <td>To Kill a Mockingbird</td>
-                                    <td>10027</td>
-                                    <td>2023-10-10</td>
-                                    <td><button>...</button></td>
-                                </tr>
-                                <tr>
-                                    <td>#8-10023-32</td>
-                                    <td>The Catcher in the Rye</td>
-                                    <td>10028</td>
-                                    <td>2023-10-12</td>
-                                    <td><button>...</button></td>
-                                </tr>
+                                <% for(var i = 0; i <dueBooks.length; i++) { %>
+                                    <tr>
+                                        <td><%= i + 1 %></td>
+                                        <td><%= dueBooks[i].bookTitle %></td>
+                                        <td><%= dueBooks[i].memberId %></td>
+                                        <td><%= dueBooks[i].dueDate %></td>
+                                        <td><button>...</button></td>
+                                    </tr>
+                                <% } %>
                             </table>
                             <div class="see-all">
                                 <button>See All</button>
