@@ -13,7 +13,6 @@ exports.issueBook = async (req, res) => {
     if (book.availableCopies == 0) {
       return res.status(400).json({ error: 'Book is not available' });
     }
-    console.log(book._id);
     const issuedToData = {
       memberId: memberId,
       memberName: member.name,
