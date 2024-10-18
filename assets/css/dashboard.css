@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root{
     --app-bg: #201c1d;
@@ -78,8 +79,10 @@ body {
     padding: 10px 16px;
     color: var(--sidebar-link);
     text-decoration: none;
-    font-size: 14px;
+    font-size: 15px;
     line-height: 24px;
+    font-weight: 500;
+    color: #DBDBDB;
 }
 
 .sidebar svg { 
@@ -336,43 +339,99 @@ button:focus {
     margin-top: 5px;
 }
 
-body {
-    font-family: Arial, sans-serif;
+.add-new-member-wrapper {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
 }
 
-.dropdown {
-    position: relative;
+.add-new-member {
+    width: 700px;
+    background-color: #2D2A2A;
+    border-radius: 14px;
+    padding: 20px;
+    padding-left: 69px;
+    padding-right: 69px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 0;
-    right: 0;
-    cursor: pointer;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-bottom: 34px;
 }
 
-.dropdown-content a {
-    color: black;
-    padding: 7px 8px;
-    text-decoration: none;
-    display: block;
+.form-group.left {
+    margin-right: 40px;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.form-group > label {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 4px;
+    color: #BBBBBB;
+    margin-bottom: 5px;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.form-group > input {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 400;
+    height: 36px;
+    padding: 4px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #6C6C6C;
+    background-color: #2D2A2A;
+    color: #ededed;
 }
 
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+.add-new-member-header {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 33px;
+    padding-top: 10px;
+    display: flex;
 }
 
+.add-new-member-header > .member-text {
+    padding-left: 8px;
+    color: #f65867;
+}
 
+.two-form-group-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.app-content-route-links {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    font-weight: 300;
+    padding-left: 8px;
+}
+
+.app-content-route-links > div {
+    margin-right: 3px;
+}
+
+.submit-group > button {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    float: right;
+    width: 134px;
+    height: 39px;
+    margin-top: 28px;
+    border-radius: 5px;
+    background: #f65867;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 34px;
+}
