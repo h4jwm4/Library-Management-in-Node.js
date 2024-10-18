@@ -173,7 +173,13 @@
                                         <td><%= members[i].name %></td>
                                         <td><%= members[i].borrowedBooks.length %></td>
                                         <td><%= members[i].email %></td>
-                                        <td><button>...</button></td>
+                                        <td class="dropdown">  
+                                            <button>...</button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Update Member</a>
+                                                <a class="delete-member" data-id=<%= members[i]._id%>>Delete Member</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <% } %>
                             </table>
@@ -208,7 +214,13 @@
                                         <td><%= book[i].title %></td>
                                         <td><%= book[i].author %></td>
                                         <td><%= book[i].availableCopies %></td>
-                                        <td><button>...</button></td>
+                                        <td class="dropdown">  
+                                            <button>...</button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Update Book</a>
+                                                <a class="delete-book" data-id=<%= book[i]._id%>>Delete Book</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <% } %>
                             </table>
@@ -240,7 +252,12 @@
                                         <td><%= dueBooks[i].bookTitle %></td>
                                         <td><%= dueBooks[i].memberId %></td>
                                         <td><%= dueBooks[i].dueDate %></td>
-                                        <td><button>...</button></td>
+                                        <td class="dropdown">  
+                                            <button>...</button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Return Book</a>
+                                            </div>
+                                        </td>
                                     </tr>
                                 <% } %>
                             </table>
