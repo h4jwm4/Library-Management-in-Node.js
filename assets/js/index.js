@@ -182,3 +182,26 @@ if(window.location.pathname == "/book"){
 
     })
 }
+
+// Return Book in dashboard
+if(window.location.pathname == "/dashboard"){
+    $ondelete = $(".return-book");
+    $ondelete.click(function(){
+        var bookId = $(this).attr("book-id");
+        var memberId = $(this).attr("member-id");
+        var serialId = $(this).attr("serial-id")
+
+        var request = {
+            "url" : `http://localhost:3000/api/returnBook?bookId=${bookId}&memberId=${memberId}&serialId=${serialId}`,
+            "method" : "GET"
+        }
+
+        if(confirm("Do you really want to delete this record?")){
+            $.ajax(request).done(function(response){
+                alert("Data Deleted Successfully!");
+                location.reload();
+            })
+        }
+
+    })
+}

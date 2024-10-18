@@ -37,9 +37,7 @@ exports.findDueBooks = async (req, res) => {
       });
 
       if (!Book.length) {
-          return res.status(404).json({
-            message: "No books are due today or overdue."
-          });
+          return res.status(200).json();
       }
 
       const dueBooks = Book.map(book => {
