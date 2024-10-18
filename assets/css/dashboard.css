@@ -339,13 +339,13 @@ button:focus {
     margin-top: 5px;
 }
 
-.add-new-member-wrapper, .add-new-book-wrapper {
+.add-new-member-wrapper, .add-new-book-wrapper, .update-member-wrapper, .update-book-wrapper {
     display: flex;
     width: 100%;
     margin-top: 50px;
 }
 
-.add-new-member, .add-new-book {
+.add-new-member, .add-new-book, .update-member, .update-book {
     width: 700px;
     background-color: #2D2A2A;
     border-radius: 14px;
@@ -391,7 +391,7 @@ button:focus {
     color: #ededed;
 }
 
-.add-new-member-header, .add-new-book-header {
+.add-new-member-header, .add-new-book-header, .update-member-header, .update-book-header  {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 33px;
@@ -399,7 +399,7 @@ button:focus {
     display: flex;
 }
 
-.add-new-member-header > .member-text, .add-new-book-header > .book-text {
+.add-new-member-header > .member-text, .add-new-book-header > .book-text, .update-member-header > .update-member-text, .update-book-header > .update-book-text {
     padding-left: 8px;
     color: #f65867;
 }
