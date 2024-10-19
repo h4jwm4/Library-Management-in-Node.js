@@ -23,6 +23,19 @@ const memberSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    phoneNumber: {
+      type: String,
+      unique: true, // Ensure phone numbers are unique
+      required: true, // Make it a required field
+      validate: {
+          validator: (value) => {
+              // Validate phone number format (optional)
+              const phoneRegex = /^\+?[1-9]\d{1,14}$/; // Example: E.164 format
+              return phoneRegex.test(value);
+          },
+          message: 'Invalid phone number format'
+      }
+  },
     email: {
         type: String,
         unique: true,
