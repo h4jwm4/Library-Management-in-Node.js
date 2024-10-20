@@ -435,3 +435,75 @@ button:focus {
     text-align: center;
     margin-bottom: 34px;
 }
+
+.member-wrapper {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-header {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.search-wrapper {
+    background-color: #353334;
+    width: 360px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #B8B8B8;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 22px;
+}
+
+.search-wrapper > .icon {
+    display: flex;
+    padding-left: 8px;
+    padding-right: 3px;
+}
+
+.search-wrapper > .icon > svg {
+    align-self: center;
+}
+
+.search-text {
+    align-self: center;
+}
+
+.member-table {
+    display: table;
+}
+
+.member-table-wrapper {
+    margin-top: 21px;
+}
+
+.member-table > tbody > tr:nth-child(1) {
+    background-color: #353334;
+    border-radius: 5px;
+}
+
+.member-table > tbody > tr:nth-child(1) > th:nth-child(1){
+    padding-left: 8px;
+}
+
+.member-table > tbody > tr {
+    border: none;
+}
+
+.member-table > tbody > tr > th, .member-table > tbody > tr > td {
+    width: 14%;
+    color: #DDDDDD;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.member-table > tbody > tr > td:nth-child(7) > button {
+    cursor: pointer;
+}
