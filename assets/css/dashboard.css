@@ -475,28 +475,37 @@ button:focus {
     align-self: center;
 }
 
-.member-table {
+.member-table, .book-table {
     display: table;
 }
 
-.member-table-wrapper {
+.member-table-wrapper, .book-table-wrapper {
     margin-top: 21px;
 }
 
-.member-table > tbody > tr:nth-child(1) {
+.member-table > tbody > tr:nth-child(1), .book-table > tbody > tr:nth-child(1) {
     background-color: #353334;
     border-radius: 5px;
 }
 
-.member-table > tbody > tr:nth-child(1) > th:nth-child(1){
+.member-table > tbody > tr:nth-child(1) > th:nth-child(1), .book-table > tbody > tr:nth-child(1) > th:nth-child(1){
     padding-left: 8px;
 }
 
-.member-table > tbody > tr {
+.member-table > tbody > tr, .book-table > tbody > tr {
     border: none;
 }
 
-.member-table > tbody > tr > th, .member-table > tbody > tr > td {
+.member-table > tbody > tr:hover, .book-table > tbody > tr:hover {
+    background-color: #2D2A2A;
+}
+
+.member-table > tbody > th:hover, .book-table > tbody > th:hover {
+    background-color: #353334;
+}
+
+.member-table > tbody > tr > th, .member-table > tbody > tr > td,
+.book-table > tbody > tr > th, .book-table > tbody > tr > td  {
     width: 14%;
     color: #DDDDDD;
     font-size: 15px;
@@ -505,5 +514,9 @@ button:focus {
 }
 
 .member-table > tbody > tr > td:nth-child(7) > button {
+    cursor: pointer;
+}
+
+.book-table > tbody > tr > td:nth-child(6) > button {
     cursor: pointer;
 }
