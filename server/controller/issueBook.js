@@ -13,17 +13,24 @@ exports.issueBook = async (req, res) => {
     if (book.availableCopies == 0) {
       return res.status(400).json({ error: 'Book is not available' });
     }
+
+    const dueDate = calculateDueDate();
+    const serialId = await getSerialId(memberId);
     const issuedToData = {
       memberId: memberId,
       memberName: member.name,
+      memberEmail: member.email,
       bookId: book._id,
       bookTitle: book.title,
-      dueDate: calculateDueDate(),
+      dueDate: dueDate,
       serialId: await getSerialId(memberId)
     };
 
     const borrowedBooksData = {
       bookId: bookId,
+      bookTitle: book.title,
+      author: book.author,
+      dueDate: dueDate,
       serialId: await getSerialId(memberId)
     };
 
@@ -52,8 +59,8 @@ function calculateDueDate() {
 // Generate serial id
 async function getSerialId(memberId) {
   const member = await Member.findById(memberId);
-  const borrowedBooks = member.borrowedBooks;
-  // Increment the serialId
-  const newSerialId = borrowedBooks.length + 1;
+  const serialId = member.borrowedBooks.pop().serialId;
+  // Increment the serialId and return 0 if the borrowed books is empty
+  const newSerialId = serialId ? serialId + 1 : 0;
   return newSerialId;
 }

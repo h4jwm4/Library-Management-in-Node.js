@@ -42,6 +42,15 @@ const memberSchema = new mongoose.Schema({
           type: mongoose.Schema.Types.ObjectId,
           ref: 'book'
         },
+        bookTitle: {
+          type: String
+        },
+        author: {
+          type: String
+        },
+        dueDate: {
+          type: Date
+        },
         serialId: {
             type: Number
         }
@@ -75,8 +84,10 @@ const bookSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Member'
       },
-      memberName: 
-      {
+      memberName: {
+        type: String
+      },
+      memberEmail: {
         type: String
       },
       bookId: {
@@ -89,8 +100,7 @@ const bookSchema = new mongoose.Schema({
         type: Date
       },
       serialId: {
-        type: Number,
-        unique: true
+        type: Number
       }
     }
   ]

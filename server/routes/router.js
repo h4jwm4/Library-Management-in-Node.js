@@ -41,7 +41,13 @@ route.get('/add-member', services.add_member);
  *  @description show members
  *  @method GET /show-member
  */
-route.get('/member', services.show_member);
+route.get('/members', services.show_member);
+
+/**
+ *  @description show members details
+ *  @method GET /show-member
+ */
+route.get('/member-details', services.show_member_details);
 
 /**
  *  @description for update member
@@ -60,7 +66,13 @@ route.get('/add-book', services.add_book)
  *  @description show book
  *  @method GET /show-book
  */
-route.get('/book', services.show_book);
+route.get('/books', services.show_book);
+
+/**
+ *  @description show book
+ *  @method GET /show-book
+ */
+route.get('/book-details', services.show_book_details);
 
 /**
  *  @description for update book
