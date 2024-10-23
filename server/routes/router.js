@@ -80,6 +80,13 @@ route.get('/book-details', services.show_book_details);
  */
 route.get('/update-book', services.update_book)
 
+/**
+ *  @description show due books
+ *  @method GET /show-due-books
+ */
+route.get('/due-books', services.show_due_books);
+
+
 // API for users
 route.post('/api/users', controller.createUser);
 route.get('/api/users', controller.findUser);
@@ -91,12 +98,15 @@ route.post('/api/member', controller.createMember);
 route.get('/api/member', controller.findMember);
 route.put('/api/member/:id', controller.updateMember);
 route.delete('/api/member/:id', controller.deleteMember);
+route.get('/api/totalMembers', controller.findTotalMembers);
 
 // API Book
 route.post('/api/book', controller.createBook);
 route.get('/api/book', controller.findBook);
 route.put('/api/book/:id', controller.updateBook);
 route.delete('/api/book/:id', controller.deleteBook);
+route.get('/api/totalBooks', controller.findTotalBooks);
+route.get('/api/totalIssuedBooks', controller.findTotalIssuedBooks);
 
 // API Issue Books
 route.post('/api/issueBook/:bookId/:memberId', issueBook);

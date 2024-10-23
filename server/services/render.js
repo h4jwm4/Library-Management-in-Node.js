@@ -54,7 +54,7 @@ exports.dashboardRoutes = async (req, res) => {
       console.error('Error fetching data:', error);
       res.status(500).send('An error occurred while fetching data.');
     }
-  };
+};
 
 exports.add_user = (req, res) =>{
     res.render('add_user');
@@ -138,3 +138,12 @@ exports.update_book = (req, res) =>{
         })
 }
 
+exports.show_due_books = async (req, res) => {
+    axios.get('http://localhost:3000/api/findDueBooks')
+    .then(function(response){
+        res.render('due_books', { dueBooks : response.data });
+    })
+    .catch(err =>{
+        res.send(err);
+    })
+};

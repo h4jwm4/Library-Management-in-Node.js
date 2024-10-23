@@ -328,3 +328,39 @@ exports.deleteBook = (req, res)=>{
             });
         });
 }
+
+// Find Total Books
+exports.findTotalBooks = (req, res)=>{
+    Bookdb.count()
+        .then(totalBooks => {
+            res.send({totalBooks: totalBooks})
+        })
+        .catch(err => {
+            res.status(500).send({ message : err.message || "Error Occurred while retriving Total Book information" })
+        })
+}
+
+exports.findTotalMembers = (req, res)=>{
+    Member.count()
+        .then(totalMembers => {
+            res.send({totalMembers: totalMembers})
+        })
+        .catch(err => {
+            res.status(500).send({ message : err.message || "Error Occurred while retriving Total Member information" })
+        })
+}
+
+exports.findTotalIssuedBooks = async (req, res)=>{
+    const data = await Bookdb.find({}, {issuedTo: 1});
+    const issuedToArray = data.map(e => e.issuedTo.length);
+    console.log(data);
+    let totalIssuedBooks = 0;
+    for (let issuedTo of issuedToArray) {
+        totalIssuedBooks += issuedTo;
+    }
+    
+    res.send({totalIssuedBooks: totalIssuedBooks})
+    .catch(err => {
+            res.status(500).send({ message : err.message || "Error Occurred while retriving Total Issued Book information" })
+    })
+}

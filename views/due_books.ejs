@@ -37,13 +37,13 @@
                         <span>Books</span>
                     </a>
                 </li>
-                <li class="sidebar-list-item active">
+                <li class="sidebar-list-item">
                     <a href="/members">
                         <svg width="18" height="18" fill="#ffffff" viewBox="0 0 96.00 96.00" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.0009600000000000001"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.192"></g><g id="SVGRepo_iconCarrier"><title></title><path d="M80.8806,58.106A17.969,17.969,0,1,0,50.7979,38.4587a30.0584,30.0584,0,0,0-5.9173-4.3527,18,18,0,1,0-29.7612,0A29.8957,29.8957,0,0,0,0,60a5.9966,5.9966,0,0,0,6,6H42.1494A29.7165,29.7165,0,0,0,36,84a5.9966,5.9966,0,0,0,6,6H90a5.9966,5.9966,0,0,0,6-6A29.8957,29.8957,0,0,0,80.8806,58.106ZM66,42a6,6,0,1,1-6,6A6.0116,6.0116,0,0,1,66,42ZM24,24a6,6,0,1,1,6,6A6.0116,6.0116,0,0,1,24,24Zm6,18A18.0182,18.0182,0,0,1,46.9688,54H13.0313A18.018,18.018,0,0,1,30,42ZM49.0313,78a17.9974,17.9974,0,0,1,33.9375,0Z"></path></g></svg>
                         <span>Members</span>
                     </a>
                 </li>
-                <li class="sidebar-list-item">
+                <li class="sidebar-list-item active">
                     <a href="/due-books">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                         <span>Due Books</span>
@@ -75,12 +75,12 @@
                             •
                         </div>
                         <div>
-                            Members
+                            Due Books
                         </div>
                     </div>
                     <div class="member-wrapper">
                         <div class="member-header">
-                            Members
+                            Due Books
                         </div>
                         <div class="search-add-wrapper">
                             <div class="search-wrapper">
@@ -91,39 +91,34 @@
                                     Search...
                                 </div>
                             </div>
-                            <a href="/add-member" class="add-wrapper">
-                                <div class="icon">
-                                    <svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#B8B8B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                </div>
-                                <div class="member-text">
-                                    Add New Member
-                                </div>
-                            </a>
                         </div>
                         <div class="member-table-wrapper">
                             <table class="member-table">
                                 <tr>
+                                    <th>Book ID</th>
+                                    <th>Title</th>
                                     <th>Member ID</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Address</th>
-                                    <th>Books Issued</th>
+                                    <th>Member Name</th>
+                                    <th>Member Email</th>
+                                    <th>Due Date</th>
                                     <th>Action</th>
                                 </tr>
-                                <% for(var i = 0; i < members.length; i++) { %>
+                                <% for(var i = 0; i < dueBooks.length; i++) { %>
                                     <tr>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= i + 1 %></td>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].name %></td>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].email %></td>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].phoneNumber %></td>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].address %></td>
-                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].borrowedBooks.length %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].bookId %>';"><%= i + 1 %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].bookId %>';"><%= dueBooks[i].bookTitle %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].memberId %>';"><%= i + 1 %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].memberId %>';"><%= dueBooks[i].memberName %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].memberId %>';"><%= dueBooks[i].memberEmail %></td>
+                                        <td onclick="window.location='/book-details?id=<%= dueBooks[i].memberId %>';"><%= dueBooks[i].dueDate.split("T")[0] %></td>
                                         <td class="dropdown">  
                                             <button>...</button>
                                             <div class="dropdown-content">
-                                                <a href="update-member?id=<%= members[i]._id %>">Update Member</a>
-                                                <a class="delete-member" data-id=<%= members[i]._id%>>Delete Member</a>
+                                                <a class="return-book" 
+                                                    book-id=<%= dueBooks[i].bookId %> 
+                                                    member-id=<%= dueBooks[i].memberId %> 
+                                                    serial-id=<%= dueBooks[i].serialId %>>Return Book
+                                                </a>
                                             </div>
                                         </td>
                                     </tr>

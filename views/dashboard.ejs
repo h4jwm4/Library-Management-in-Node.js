@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="sidebar-list-item">
-                    <a href="#">
+                    <a href="/due-books">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
                         <span>Due Books</span>
                     </a>
@@ -153,11 +153,11 @@
                                 <h1>
                                     Member List
                                 </h1>
-                                <div class="add-new-member-button">
+                                <a href="/add-member" class="add-new-member-button">
                                     <div>
-                                        Add New Member
+                                       Add New Member
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <table class="member-list">
                                 <tr>
@@ -169,14 +169,14 @@
                                 </tr>
                                 <% for(var i = 0; i < members.length; i++) { %>
                                     <tr>
-                                        <td><%= i + 1 %></td>
-                                        <td><%= members[i].name %></td>
-                                        <td><%= members[i].borrowedBooks.length %></td>
-                                        <td><%= members[i].email %></td>
+                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= i + 1 %></td>
+                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].name %></td>
+                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].borrowedBooks.length %></td>
+                                        <td onclick="window.location='/member-details?id=<%= members[i]._id %>';"><%= members[i].email %></td>
                                         <td class="dropdown">  
                                             <button>...</button>
                                             <div class="dropdown-content">
-                                                <a href="#">Update Member</a>
+                                                <a href="update-member?id=<%= members[i]._id %>">Update Member</a>
                                                 <a class="delete-member" data-id=<%= members[i]._id%>>Delete Member</a>
                                             </div>
                                         </td>
@@ -184,7 +184,7 @@
                                 <% } %>
                             </table>
                             <div class="see-all">
-                                <button>
+                                <button  onclick="window.location='/members';">
                                     See All
                                 </button>
                             </div>
@@ -194,11 +194,11 @@
                                 <h1>
                                     Book List
                                 </h1>
-                                <div class="add-new-book-button">
+                                <a href="/add-book" class="add-new-book-button">
                                     <div>
                                         Add New Book
                                     </div>
-                                </div>
+                                </a>
                             </div>
                             <table class="book-list">
                                 <tr>
@@ -210,14 +210,14 @@
                                 </tr>
                                 <% for(var i = 0; i < book.length; i++) { %>
                                     <tr>
-                                        <td><%= i + 1 %></td>
-                                        <td><%= book[i].title %></td>
-                                        <td><%= book[i].author %></td>
-                                        <td><%= book[i].availableCopies %></td>
+                                        <td onclick="window.location='/book-details?id=<%= book[i]._id %>';"><%= i + 1 %></td>
+                                        <td onclick="window.location='/book-details?id=<%= book[i]._id %>';"><%= book[i].title %></td>
+                                        <td onclick="window.location='/book-details?id=<%= book[i]._id %>';"><%= book[i].author %></td>
+                                        <td onclick="window.location='/book-details?id=<%= book[i]._id %>';"><%= book[i].availableCopies %></td>
                                         <td class="dropdown">  
                                             <button>...</button>
                                             <div class="dropdown-content">
-                                                <a href="#">Update Book</a>
+                                                <a href="update-book?id=<%= book[i]._id %>">Update Book</a>
                                                 <a class="delete-book" data-id=<%= book[i]._id%>>Delete Book</a>
                                             </div>
                                         </td>
@@ -225,7 +225,7 @@
                                 <% } %>
                             </table>
                             <div class="see-all">
-                                <button>
+                                <button onclick="window.location='/books';">
                                     See All
                                 </button>
                             </div>

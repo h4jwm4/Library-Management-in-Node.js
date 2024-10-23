@@ -1,3 +1,12 @@
+//Reloads the site when browser back button is pressed
+(function () {
+    window.onpageshow = function(event) {
+        if (event.persisted) {
+            window.location.reload();
+        }
+    };
+})();
+
 $("#add_user").submit(function(event){
     alert("Data Inserted Successfully!");
 })
@@ -74,8 +83,8 @@ if(window.location.pathname == "/member"){
     })
 }
 
-// Delete Member in Dashboard
-if(window.location.pathname == "/dashboard"){
+// Delete Member in Dashboard and Members Page
+if(window.location.pathname == "/dashboard" || window.location.pathname == "/members"){
     $ondelete = $(".delete-member");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
@@ -95,8 +104,8 @@ if(window.location.pathname == "/dashboard"){
     })
 }
 
-// Delete Book in Dashboard
-if(window.location.pathname == "/dashboard"){
+// Delete Book in Dashboard and Books Page
+if(window.location.pathname == "/dashboard" || window.location.pathname == "/books" ){
     $ondelete = $(".delete-book");
     $ondelete.click(function(){
         var id = $(this).attr("data-id")
@@ -183,8 +192,8 @@ if(window.location.pathname == "/book"){
     })
 }
 
-// Return Book in dashboard
-if(window.location.pathname == "/dashboard"){
+// Return Book in dashboard and duebooks page
+if(window.location.pathname == "/dashboard" || window.location.pathname == "/due-books"){
     $ondelete = $(".return-book");
     $ondelete.click(function(){
         var bookId = $(this).attr("book-id");
