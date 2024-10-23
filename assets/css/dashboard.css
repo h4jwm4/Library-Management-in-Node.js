@@ -339,13 +339,13 @@ button:focus {
     margin-top: 5px;
 }
 
-.add-new-member-wrapper {
+.add-new-member-wrapper, .add-new-book-wrapper, .update-member-wrapper, .update-book-wrapper {
     display: flex;
     width: 100%;
     margin-top: 50px;
 }
 
-.add-new-member {
+.add-new-member, .add-new-book, .update-member, .update-book {
     width: 700px;
     background-color: #2D2A2A;
     border-radius: 14px;
@@ -391,7 +391,7 @@ button:focus {
     color: #ededed;
 }
 
-.add-new-member-header {
+.add-new-member-header, .add-new-book-header, .update-member-header, .update-book-header  {
     font-size: 32px;
     font-weight: 400;
     margin-bottom: 33px;
@@ -399,7 +399,7 @@ button:focus {
     display: flex;
 }
 
-.add-new-member-header > .member-text {
+.add-new-member-header > .member-text, .add-new-book-header > .book-text, .update-member-header > .update-member-text, .update-book-header > .update-book-text {
     padding-left: 8px;
     color: #f65867;
 }
@@ -434,4 +434,48 @@ button:focus {
     font-weight: 500;
     text-align: center;
     margin-bottom: 34px;
+}
+
+
+.dropdown {
+    position: relative;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-bottom: 34px;
+}
+
+.form-group.left {
+    margin-right: 40px;
+}
+
+.form-group > label {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 4px;
+    color: #BBBBBB;
+    margin-bottom: 5px;
+}
+
+.form-group > input {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 400;
+    height: 36px;
+    padding: 4px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #6C6C6C;
+    background-color: #2D2A2A;
+    color: #ededed;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
