@@ -63,7 +63,7 @@
                 <div>
                     <!--<div class="app-content-welcome-message">
                         <div>
-                            Update Member
+                            Update Book
                         </div>
                     </div>-->
                     <div class="app-content-route-links">
@@ -74,7 +74,7 @@
                             •
                         </div>
                         <div>
-                            Update Member
+                            Update Book
                         </div>
                     </div>
                 </div>
@@ -89,24 +89,25 @@
                             </span>
                         </div>    
                         <form action="/api/updatebook" method="POST" id="update_book">
+                            <input type="hidden" name="id" value="<%= book._id %>">
                             <div class="two-form-group-wrapper">
                                 <div class="form-group left">
                                     <label for="name" class="text-light">Title</label>
-                                    <input type="text" name="title" value="" placeholder="">
+                                    <input type="text" name="title" value="<%= book.title%>" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="author" class="text-light">Author</label>
-                                    <input type="text" name="author" value="" placeholder="">
+                                    <input type="text" name="author" value="<%= book.author%>" placeholder="">
                                 </div>
                             </div>
                             <div class="two-form-group-wrapper">
                                 <div class="form-group left">
                                     <label for="category" class="text-light">Category</label>
-                                    <input type="text" name="category" value="" placeholder="">
+                                    <input type="text" name="category" value="<%= book.category%>" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="totalCopies" class="text-light">Total Copies</label>
-                                    <input type="number" name="totalCopies" value="" placeholder="">
+                                    <input type="number" name="totalCopies" value="<%= book.totalCopies%>" placeholder="">
                                 </div>
                             </div>
                             <div class="submit-group">

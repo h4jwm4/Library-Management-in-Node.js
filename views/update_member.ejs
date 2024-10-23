@@ -89,24 +89,25 @@
                             </span>
                         </div>    
                         <form action="/api/updatemember" method="POST" id="update_member">
+                            <input type="hidden" name="id" value="<%= member._id %>">
                             <div class="two-form-group-wrapper">
                                 <div class="form-group left">
                                     <label for="name" class="text-light">Name</label>
-                                    <input type="text" name="name" value="" placeholder="">
+                                    <input type="text" name="name" value="<%= member.name%>" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="address" class="text-light">Address</label>
-                                    <input type="text" name="address" value="" placeholder="">
+                                    <input type="text" name="address" value="<%= member.address%>" placeholder="">
                                 </div>
                             </div>
                             <div class="two-form-group-wrapper">
                                 <div class="form-group left">
                                     <label for="phoneNumber" class="text-light">Phone Number</label>
-                                    <input type="text" name="phoneNumber" value="" placeholder="">
+                                    <input type="text" name="phoneNumber" value="<%= member.phoneNumber%>" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="text-light">Email</label>
-                                    <input type="text" name="email" value="" placeholder="">
+                                    <input type="text" name="email" value="<%= member.email%>" placeholder="">
                                 </div>
                             </div>
                             <div class="submit-group">
