@@ -441,6 +441,37 @@ button:focus {
     position: relative;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 7px 8px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
@@ -474,8 +505,4 @@ button:focus {
     border: 1px solid #6C6C6C;
     background-color: #2D2A2A;
     color: #ededed;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
 }
