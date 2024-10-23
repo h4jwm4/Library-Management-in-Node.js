@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 :root{
     --app-bg: #201c1d;
@@ -436,7 +437,6 @@ button:focus {
     margin-bottom: 34px;
 }
 
-
 .dropdown {
     position: relative;
 }
@@ -505,4 +505,224 @@ button:focus {
     border: 1px solid #6C6C6C;
     background-color: #2D2A2A;
     color: #ededed;
+}
+
+.member-wrapper {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-header {
+    font-size: 36px;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.search-wrapper {
+    background-color: #353334;
+    width: 360px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #B8B8B8;
+    display: flex;
+    border-radius: 5px;
+    margin-top: 22px;
+}
+
+.search-wrapper > .icon {
+    display: flex;
+    padding-left: 8px;
+    padding-right: 3px;
+}
+
+.search-wrapper > .icon > svg {
+    align-self: center;
+}
+
+.search-text {
+    align-self: center;
+}
+
+.member-table, .book-table {
+    display: table;
+}
+
+.member-table-wrapper, .book-table-wrapper {
+    margin-top: 21px;
+}
+
+.member-table > tbody > tr:nth-child(1), .book-table > tbody > tr:nth-child(1) {
+    background-color: #353334;
+    border-radius: 5px;
+}
+
+.member-table > tbody > tr:nth-child(1) > th:nth-child(1), .book-table > tbody > tr:nth-child(1) > th:nth-child(1){
+    padding-left: 8px;
+}
+
+.member-table > tbody > tr, .book-table > tbody > tr {
+    border: none;
+}
+
+.member-table > tbody > tr:hover, .book-table > tbody > tr:hover {
+    background-color: #2D2A2A;
+}
+
+.member-table > tbody > th:hover, .book-table > tbody > th:hover {
+    background-color: #353334;
+}
+
+.member-table > tbody > tr > th, .member-table > tbody > tr > td,
+.book-table > tbody > tr > th, .book-table > tbody > tr > td  {
+    width: 14%;
+    color: #DDDDDD;
+    font-weight: 500;
+    text-align: center;
+}
+
+.member-table > tbody > tr > th,
+.book-table > tbody > tr > th {
+    font-size: 15px;
+}
+
+.member-table > tbody > tr > td,
+.book-table > tbody > tr > td {
+    font-size: 15px;
+    color: #c0c0c0;
+}
+
+.member-table > tbody > tr > td:nth-child(7) > button {
+    cursor: pointer;
+}
+
+.book-table > tbody > tr > td:nth-child(6) > button {
+    cursor: pointer;
+}
+
+.member-details-body {
+    width: 819px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.member-details-header {
+    font-size: 36px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.member-profile-wrapper, .member-borrowed-books-wrapper {
+    width: 100%;
+    background-color: #2D2A2A;
+    border-radius: 14px;
+    padding-left: 58px;
+    padding-right: 58px;
+}
+
+.member-profile-text-wrapper, .member-borrowed-books-text-wrapper {
+    padding-top: 28px;
+    color: #909090;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+.profile-items {
+    padding-top: 23px;
+    display: flex;
+}
+
+.profile-items > .label {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    color: #CFCFCF;
+    font-size: 17px;
+    font-weight: 600;
+    align-self: center;
+    width: 50%;
+}
+
+.profile-items > .value {
+    font-family: 'Poppins', sans-serif;
+    color: #EFEFEF;
+    font-size: 20px;
+    font-weight: 600;
+    align-self: center;
+    width: 50%;
+}
+
+.member-profile-wrapper > .actions,
+.member-borrowed-books-wrapper > .actions {
+    width: 100%;
+    display: flex;
+    padding-top: 13px;
+    padding-bottom: 30px;
+}
+
+.member-profile-wrapper > .actions > button ,
+.member-borrowed-books-wrapper > .actions > button {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    border: 1px solid #808080;
+    border-radius: 3px;
+    padding: 7px 11px;
+
+}
+
+.member-profile-wrapper > .actions > button > .text,
+.member-borrowed-books-wrapper > .actions > button > .text {
+    padding-left: 11px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #CFCDCD;
+}
+
+.member-borrowed-books-wrapper {
+    margin-top: 73px;
+}
+
+.member-borrowed-books-table {
+    margin-top: 6px;
+}
+
+.member-borrowed-books-table > table > tbody > tr {
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.member-borrowed-books-table > table > tbody > tr > th {
+    font-size: 15px;
+    color: #DDDDDD;
+    text-align: center;
+}
+
+.member-borrowed-books-table > table > tbody > tr > td {
+    font-size: 15px;
+    color: #DDDDDD;
+    text-align: center;
+}
+
+.member-borrowed-books-wrapper > .actions {
+    padding-top: 20px;
+    padding-bottom: 24px;
+}
+
+.member-borrowed-books-wrapper > .actions > button > .text {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.no-borrowed-books {
+    font-size: 25px;
+    font-weight: 500;
+    padding-top: 10px;
+    margin-bottom: -15px;
 }

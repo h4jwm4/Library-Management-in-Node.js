@@ -94,6 +94,16 @@ exports.update_member = (req, res) =>{
         })
 }
 
+exports.show_member_details = (req, res) =>{
+    axios.get('http://localhost:3000/api/member', { params : { id : req.query.id }})
+        .then(function(memberData){
+            res.render("member_details", { member : memberData.data})
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+}
+
 exports.add_book = (req, res) =>{
     res.render('add_book');
 }
@@ -106,6 +116,16 @@ exports.show_book = (req, res) => {
     .catch(err =>{
         res.send(err);
     })
+}
+
+exports.show_book_details = (req, res) =>{
+    axios.get('http://localhost:3000/api/book', { params : { id : req.query.id }})
+        .then(function(bookData){
+            res.render("book_details", { book : bookData.data})
+        })
+        .catch(err =>{
+            res.send(err);
+        })
 }
 
 exports.update_book = (req, res) =>{
