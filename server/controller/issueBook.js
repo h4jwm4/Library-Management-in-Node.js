@@ -59,8 +59,15 @@ function calculateDueDate() {
 // Generate serial id
 async function getSerialId(memberId) {
   const member = await Member.findById(memberId);
-  const serialId = member.borrowedBooks.pop().serialId;
-  // Increment the serialId and return 0 if the borrowed books is empty
-  const newSerialId = serialId ? serialId + 1 : 0;
-  return newSerialId;
+  if (member.borrowedBooks.length == 0)
+  {
+    // Return serial id as 1 because there are no records
+    return 1;
+  }
+  else {
+    const serialId = member.borrowedBooks.pop().serialId;
+    // Increment the serialId and return 0 if the borrowed books is empty
+    const newSerialId = serialId ? serialId + 1 : 0;
+    return newSerialId;
+  }  
 }

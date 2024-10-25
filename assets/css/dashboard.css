@@ -524,6 +524,11 @@ button:focus {
     flex-direction: column;
 }
 
+.message {
+    padding-top: 10px;
+    color: #dedede;
+}
+
 .member-header {
     font-size: 36px;
     font-weight: 700;

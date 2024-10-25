@@ -214,3 +214,23 @@ if(window.location.pathname == "/dashboard" || window.location.pathname == "/due
 
     })
 }
+
+// Issue Book
+if(window.location.pathname == "/issue-book"){
+    $onIssue = $(".issue-book");
+    $onIssue.click(function(){
+        var memberId = $(this).attr("member-id");
+        var bookId =  $(this).attr("book-id")
+
+        var request = {
+            "url" : `http://localhost:3000/api/issueBook/${bookId}/${memberId}`,
+            "method" : "POST"
+        }
+
+        $.ajax(request).done(function(response){
+            alert("Book Issued Successfully!");
+            location.reload();
+        })
+
+    })
+}

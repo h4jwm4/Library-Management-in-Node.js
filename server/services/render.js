@@ -118,6 +118,29 @@ exports.show_book = (req, res) => {
     })
 }
 
+exports.issue_book = (req, res) => {
+    console.log(req.query)
+
+    if (req.query.memberId)
+    {
+        const memberId = req.query.memberId;
+        axios.get('http://localhost:3000/api/book')
+        .then(function(response){
+            res.render('issue_book', { book : response.data, memberId: memberId });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+    }
+    axios.get('http://localhost:3000/api/member')
+    .then(function(response){
+        res.render('issue_book', { members : response.data, memberId: 0});
+    })
+    .catch(err =>{
+        res.send(err);
+    })
+}
+
 exports.show_book_details = (req, res) =>{
     axios.get('http://localhost:3000/api/book', { params : { id : req.query.id }})
         .then(function(bookData){

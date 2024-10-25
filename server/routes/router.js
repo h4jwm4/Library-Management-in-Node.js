@@ -86,6 +86,11 @@ route.get('/update-book', services.update_book)
  */
 route.get('/due-books', services.show_due_books);
 
+/**
+ *  @description show book
+ *  @method GET /show-book
+ */
+route.get('/issue-book', services.issue_book);
 
 // API for users
 route.post('/api/users', controller.createUser);
