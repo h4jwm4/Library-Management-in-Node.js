@@ -183,8 +183,15 @@
                                                     <td><%= member.borrowedBooks[i].bookTitle %></td>
                                                     <td><%= member.borrowedBooks[i].author %></td>
                                                     <td><%= member.borrowedBooks[i].dueDate.split("T")[0] %></td>
-                                                    <td class="dropdown">  
+                                                    <td class="dropdown">   
                                                         <button>...</button>
+                                                        <div class="dropdown-content">
+                                                            <a class="return-book" 
+                                                            book-id=<%= member.borrowedBooks[i].bookId %>
+                                                            member-id=<%= member._id %>
+                                                            serial-id=<%= member.borrowedBooks[i].serialId %>>Return Book
+                                                         </a>
+                                                        </div>
                                                     </td>
                                                 </tr>
                                             <% } %>
