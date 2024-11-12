@@ -223,6 +223,7 @@ a {
 }
 
 .app-content-data-snippets .snippet .icon div {
+    display: flex;
     background-color: #f65867;
     padding: 4px;
     width: 30px;
@@ -231,6 +232,12 @@ a {
     font-size: 13px;
     text-align: center  ;
 }
+
+
+.app-content-data-snippets .snippet .icon div > svg {
+    margin: auto;
+}
+
 
 .list-tables {
     display: flex;
