@@ -11,7 +11,7 @@ const { findDueBooks } = require('../controller/dueBook')
  *  @description Root Route
  *  @method GET /
  */
-route.get('/', services.homeRoutes);
+route.get('/', services.dashboardRoutes);
 
 /**
  *  @description Root Route
